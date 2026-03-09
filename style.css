@@ -1,0 +1,13 @@
+marquee {
+    font-size: 10rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main1 {
+    display: flex;
+}

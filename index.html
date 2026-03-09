@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+        <script src="./script.js"></script>
+        <title>Strona kantor</title>
+    </head>
+    <body>
+        <marquee scrollamount="30">Profesjonalna strona tu będzie. Losowy kurs walutowy <span class="randomExchangeRate"></span></marquee>
+
+        <div class="main1">
+            
+            <div class="countries">
+                <h1>Dostępne kraje (na razie 😅)</h1>
+            </div>
+
+            <script type="module">
+                import { config } from './config/config.js';
+                
+                async function simpleRequest() {
+                    try {
+                        const response = await fetch(config.endpoints.countries);
+                        const data = await response.json();
+
+                        console.log(data);
+
+                        let countriesSection = document.querySelector('.countries')
+                        countriesSection.appendChild(document.createElement('div')).textContent = `Dostępne kraje: ${Object.keys(data).length}`;
+
+                        for (const prop in data) {
+                            let str = `${prop}: ${data[prop].country_name} ${data[prop].currency_name} (${data[prop].currency_code})`;
+
+                            // console.log(str);
+                            countriesSection.appendChild(document.createElement('div')).textContent = str;
+                        }
+
+                    } catch (err) {
+                        console.log(`Something is not yes -> ${err}`);                                                  
+                    }
+                }
+
+                async function randomCurrency() {
+                    try {
+                        const response = await fetch(`${config.endpoints.currencyRates}/pln.json`);
+                        const data = await response.json();
+
+                        let plnRates = data[Object.keys(data)[1]];
+
+                        let randomRate = Object.keys(plnRates)[Math.floor(Math.random() * Object.keys(plnRates).length)];
+
+                        document.querySelector('.randomExchangeRate').textContent = `1 PLN = ${plnRates[randomRate]} ${randomRate}`;
+                    } catch (err) {
+                        console.log(`Something is not yes -> ${err}`);
+                    }
+                }
+
+                simpleRequest();
+                randomCurrency();
+
+            </script>
+    </body>
+</html>
