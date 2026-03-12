@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursy walut</title>
+    <link href="./exchange.css" rel="stylesheet"> 
+    <script src="./exchange.js" type="module"></script>
+</head>
+<body>
+    <nav class="taskbar">
+        <ul>
+            <li><a href="../index.html">Strona główna</a></li>
+            <li><a href="./exchange.html">Kursy walut</a></li>
+            <li><a href="../contact.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Kursy walut z całego świata!</h1>
+
+        <label for="currency">Wybierz walutę</label><br>
+        <input id="currency" name="currency" type="text" placeholder="Wyszukaj kurs waluty">  
+
+        <div class="loading" hidden>Loading…</div>
+
+        <div class="availableCurrencies"></div>
+
+        <div class="exchangeRates"></div>
+    </main>
+</body>
+</html>

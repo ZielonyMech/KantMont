@@ -1,0 +1,92 @@
+.taskbar {
+    width: 100%;
+    background-color: #222;
+    padding: 0.5rem 1rem;
+}
+
+.taskbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.taskbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.taskbar a:hover {
+    text-decoration: underline;
+}
+
+.availableCurrencies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.currencyCard {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.75rem;
+    background: #fff;
+    user-select: none;
+}
+
+.currencyCard:hover {
+    background-color: #f6f6f6;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #d7fff1;
+    border-color: #72e1c2;
+}
+
+.loading {
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.75rem;
+    background: #111;
+    color: #fff;
+    width: fit-content;
+}
+
+.exchangeRates {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.ratesHeader {
+    font-weight: 700;
+    margin: 0.5rem 0 0.75rem 0;
+}
+
+.ratesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+}
+
+.rateCard {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.75rem;
+    background: #fff;
+}
+
+.rateCode {
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.rateValue {
+    margin-top: 0.25rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    opacity: 0.85;
+}

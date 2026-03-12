@@ -8,6 +8,14 @@
         <title>Strona kantor</title>
     </head>
     <body>
+        <nav class="taskbar">
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="./pages/exchange.html">Kursy walut</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
         <marquee scrollamount="30">Profesjonalna strona tu będzie. Losowy kurs walutowy <span class="randomExchangeRate"></span></marquee>
 
         <div class="main1">
@@ -17,7 +25,7 @@
             </div>
 
             <script type="module">
-                import { config } from './config/config.js';
+                import { config } from './scripts/config/config.js';
                 
                 async function simpleRequest() {
                     try {
